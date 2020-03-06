@@ -20,6 +20,7 @@ yarn add copy-to-clipboard
 // server
 yarn add nodemon
 yarn add request
+yarn add @k3rn31p4nic/google-translate-api
 ```
 
 ## React Bootstrap

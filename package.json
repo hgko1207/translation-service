@@ -10,6 +10,7 @@
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "dependencies": {
+    "@k3rn31p4nic/google-translate-api": "^1.1.0",
     "axios": "^0.19.2",
     "body-parser": "^1.18.3",
     "copy-to-clipboard": "^3.3.1",
