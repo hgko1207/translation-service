@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import LanguageBar from "../../Components/LanguageBar";
 import TextareaAutosize from "react-textarea-autosize";
+import { Button } from "react-bootstrap";
 import "../../assets/App.css";
 
 const Container = styled.div`
@@ -64,10 +65,16 @@ const ResultContent = styled.div`
   width: 33%;
   border-right: ${props => (props.type === "google" ? "1px solid rgba(0, 0, 0, 0.12)" : "0")};
   background-color: #f5f5f5;
-  z-index: -1;
 `;
 
-const HomePresenter = ({ onInput, resultText }) => {
+const ResultFooter = styled.div`
+  position: absolute;
+  width: calc(100% - 30px);
+  bottom: 8px;
+  padding-top: 8px;
+`;
+
+const HomePresenter = ({ onInput, googleText, papagoText, googleTextCopy, papagoTextCopy }) => {
   return (
     <Container>
       <Section>
@@ -78,9 +85,21 @@ const HomePresenter = ({ onInput, resultText }) => {
               <TextareaAutosize className="input-textarea" onInput={onInput} />
             </InputContent>
             <ResultContent type={"google"}>
-              <div className="result-text">{resultText}</div>
+              <div className="result-text">{googleText}</div>
+              <ResultFooter>
+                <Button className="copy-button" onClick={googleTextCopy}>
+                  Copy
+                </Button>
+              </ResultFooter>
             </ResultContent>
-            <ResultContent type={"papago"}></ResultContent>
+            <ResultContent type={"papago"}>
+              <div className="result-text">{papagoText}</div>
+              <ResultFooter>
+                <Button className="copy-button" onClick={papagoTextCopy}>
+                  Copy
+                </Button>
+              </ResultFooter>
+            </ResultContent>
           </CardBody>
         </Card>
       </Section>

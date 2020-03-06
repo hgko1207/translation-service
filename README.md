@@ -15,6 +15,7 @@ yarn add styled-reset
 yarn add react-bootstrap bootstrap
 yarn add react-textarea-autosize
 yarn add axios
+yarn add copy-to-clipboard
 
 // server
 yarn add nodemon

@@ -9,10 +9,9 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var query = "notification";
-
 app.get("/api/google", function(req, res) {
-  console.log(req.query.text);
+  const query = req.query.text;
+
   var api_key = "AIzaSyCILLI8sVq5ftqBRYJihYq9Uq64XZI6NNM";
   var api_url = "https://translation.googleapis.com/language/translate/v2";
 
@@ -36,6 +35,8 @@ app.get("/api/google", function(req, res) {
 });
 
 app.get("/api/papago", function(req, res) {
+  const query = req.query.text;
+
   var client_id = "B2_TpR1ZYuee07b3JA6S";
   var client_secret = "4U3GXjHKeD";
   var api_url = "https://openapi.naver.com/v1/papago/n2mt";

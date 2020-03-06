@@ -30,8 +30,10 @@
   line-height: 28px;
   color: rgba(0, 0, 0, 0.87);
   word-wrap: break-word;
+  cursor: copy;
 }
 
 .copy-button {
   float: right;
+  padding: 0.3rem 0.75rem !important;
 }

@@ -2,12 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  /* border-radius: 8px 8px 0 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #fff;
-  box-sizing: border-box;
-  height: 48px; */
   height: 48px;
   background-color: #fff;
   border-radius: 8px 8px 0 0;
