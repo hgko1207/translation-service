@@ -9,13 +9,18 @@ const HomeContainer = () => {
 
   const translation = async (text, type) => {
     if (type === "google") {
-      const {
-        data: {
-          data: { translations: data }
-        }
-      } = await translationApi.google(text);
-      const { translatedText } = data[0];
-      setGoogleText(translatedText);
+      // const {
+      //   data: {
+      //     data: { translations: data }
+      //   }
+      // } = await translationApi.google(text);
+      // const { translatedText } = data[0];
+
+      const data = translationApi.google(text);
+      const promise = Promise.resolve(data);
+      promise.then(value => {
+        setGoogleText(value.data);
+      });
     } else if (type === "papago") {
       const {
         data: {

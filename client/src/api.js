@@ -5,12 +5,13 @@ const api = axios.create({
 });
 
 export const translationApi = {
-  google: text =>
-    api.get("google", {
+  google: text => {
+    return api.get("google", {
       params: {
         text: text
       }
-    }),
+    });
+  },
   papago: text =>
     api.get("papago", {
       params: {
