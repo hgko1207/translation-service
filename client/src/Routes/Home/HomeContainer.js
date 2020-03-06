@@ -19,7 +19,10 @@ const HomeContainer = () => {
       const data = translationApi.google(text);
       const promise = Promise.resolve(data);
       promise.then(value => {
-        setGoogleText(value.data);
+        const {
+          data: { text: text }
+        } = value;
+        setGoogleText(text);
       });
     } else if (type === "papago") {
       const {
