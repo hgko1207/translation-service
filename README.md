@@ -9,6 +9,7 @@
 
 ```bash
 // client
+yarn add prop-types
 yarn add react-router-dom
 yarn add styled-components
 yarn add styled-reset

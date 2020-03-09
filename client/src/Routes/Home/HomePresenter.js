@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import LanguageBar from "../../Components/LanguageBar";
 import TextareaAutosize from "react-textarea-autosize";
@@ -13,7 +14,7 @@ const Container = styled.div`
   :before {
     display: block;
     width: 100%;
-    height: 162px;
+    height: 165px;
     background: #fafafa;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     content: "";
@@ -35,7 +36,7 @@ const Section = styled.div`
 const Card = styled.div`
   width: 100%;
   min-height: auto;
-  margin-top: 30px;
+  margin-top: 40px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 8px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
@@ -64,6 +65,7 @@ const ResultContent = styled.div`
   padding: 20px;
   width: 33%;
   border-right: ${props => (props.type === "google" ? "1px solid rgba(0, 0, 0, 0.12)" : "0")};
+  border-radius: ${props => (props.type === "google" ? "0" : "0 0 8px 0")};
   background-color: #f5f5f5;
 `;
 
@@ -105,6 +107,14 @@ const HomePresenter = ({ onInput, googleText, papagoText, googleTextCopy, papago
       </Section>
     </Container>
   );
+};
+
+HomePresenter.propTypes = {
+  onInput: PropTypes.func,
+  googleText: PropTypes.string,
+  papagoText: PropTypes.string,
+  googleTextCopy: PropTypes.func,
+  papagoTextCopy: PropTypes.func
 };
 
 export default HomePresenter;

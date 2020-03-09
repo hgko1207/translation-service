@@ -11,27 +11,29 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// const googleApiText = () => {
-// const query = req.query.text;
-// var api_key = "";
-// var api_url = "https://translation.googleapis.com/language/translate/v2";
-// var options = {
-//   url: api_url,
-//   form: { key: api_key, source: "en", target: "ko", q: query }
-// };
-// request.post(options, function(error, response, body) {
-//   if (!error && response.statusCode == 200) {
-//     res.writeHead(200, {
-//       "Content-Type": "text/json;charset=utf-8",
-//       "Access-Control-Allow-Origin": "*"
-//     });
-//     res.end(body);
-//   } else {
-//     res.status(response.statusCode).end();
-//     console.log("error = " + response.statusCode);
-//   }
-// });
-// };
+app.get("/api/google/cloud", function(req, res) {
+  const query = req.query.text;
+
+  var api_key = "";
+  var api_url = "https://translation.googleapis.com/language/translate/v2";
+  var options = {
+    url: api_url,
+    form: { key: api_key, source: "en", target: "ko", q: query }
+  };
+
+  request.post(options, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.writeHead(200, {
+        "Content-Type": "text/json;charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
+      });
+      res.end(body);
+    } else {
+      res.status(response.statusCode).end();
+      console.log("error = " + response.statusCode);
+    }
+  });
+});
 
 app.get("/api/google", function(req, res) {
   const query = req.query.text;

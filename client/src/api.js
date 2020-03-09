@@ -12,6 +12,13 @@ export const translationApi = {
       }
     });
   },
+  googleCloud: text => {
+    return api.get("google/cloud", {
+      params: {
+        text: text
+      }
+    });
+  },
   papago: text =>
     api.get("papago", {
       params: {

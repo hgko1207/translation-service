@@ -3,28 +3,34 @@ import HomePresenter from "./HomePresenter";
 import { translationApi } from "../../api";
 import copy from "copy-to-clipboard";
 
+const apiType = {
+  google: "google",
+  papago: "papago"
+};
+
 const HomeContainer = () => {
   const [googleText, setGoogleText] = useState("");
   const [papagoText, setPapagoText] = useState("");
 
   const translation = async (text, type) => {
-    if (type === "google") {
-      // const {
-      //   data: {
-      //     data: { translations: data }
-      //   }
-      // } = await translationApi.google(text);
-      // const { translatedText } = data[0];
+    if (type === apiType.google) {
+      const {
+        data: {
+          data: { translations: data }
+        }
+      } = await translationApi.googleCloud(text);
+      const { translatedText } = data[0];
+      setGoogleText(translatedText);
 
-      const data = translationApi.google(text);
-      const promise = Promise.resolve(data);
-      promise.then(value => {
-        const {
-          data: { text: text }
-        } = value;
-        setGoogleText(text);
-      });
-    } else if (type === "papago") {
+      // const data = translationApi.google(text);
+      // const promise = Promise.resolve(data);
+      // promise.then(value => {
+      //   const {
+      //     data: { text: text }
+      //   } = value;
+      //   setGoogleText(text);
+      // });
+    } else if (type === apiType.papago) {
       const {
         data: {
           message: {
@@ -40,8 +46,8 @@ const HomeContainer = () => {
     const input = e.target.value;
     const changeText = input.replace(/(\n|\r\n)/g, " ");
 
-    translation(changeText, "google");
-    translation(changeText, "papago");
+    translation(changeText, apiType.google);
+    translation(changeText, apiType.papago);
   };
 
   const googleTextCopy = () => {

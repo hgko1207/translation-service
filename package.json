@@ -16,6 +16,7 @@
     "copy-to-clipboard": "^3.3.1",
     "express": "^4.16.4",
     "nodemon": "^2.0.2",
+    "prop-types": "^15.7.2",
     "request": "^2.88.2"
   },
   "devDependencies": {
