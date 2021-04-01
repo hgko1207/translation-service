@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/api/google/cloud", function(req, res) {
   const query = req.query.text;
 
-  var api_key = "";
+  var api_key = "AIzaSyCILLI8sVq5ftqBRYJihYq9Uq64XZI6NNM";
   var api_url = "https://translation.googleapis.com/language/translate/v2";
   var options = {
     url: api_url,
