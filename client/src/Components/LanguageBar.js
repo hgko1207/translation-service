@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   height: 48px;
@@ -36,7 +36,7 @@ const LanguageBar = () => {
       <Content>
         <Text>영어</Text>
       </Content>
-      <Swap>>></Swap>
+      <Swap>&gt;&gt;</Swap>
       <Content>
         <Text>구글 번역</Text>
       </Content>

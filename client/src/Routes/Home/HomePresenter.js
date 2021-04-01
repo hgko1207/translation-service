@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import LanguageBar from "../../Components/LanguageBar";
-import TextareaAutosize from "react-textarea-autosize";
-import { Button } from "react-bootstrap";
-import "../../assets/App.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import LanguageBar from '../../Components/LanguageBar';
+import TextareaAutosize from 'react-textarea-autosize';
+import { Button } from 'react-bootstrap';
+import '../../assets/App.css';
 
 const Container = styled.div`
   height: calc(100vh - 65px);
@@ -17,7 +17,7 @@ const Container = styled.div`
     height: 165px;
     background: #fafafa;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    content: "";
+    content: '';
     overflow: hidden;
     z-index: -1;
     position: absolute;
@@ -64,8 +64,8 @@ const ResultContent = styled.div`
   box-shadow: none;
   padding: 20px;
   width: 33%;
-  border-right: ${props => (props.type === "google" ? "1px solid rgba(0, 0, 0, 0.12)" : "0")};
-  border-radius: ${props => (props.type === "google" ? "0" : "0 0 8px 0")};
+  border-right: ${(props) => (props.type === 'google' ? '1px solid rgba(0, 0, 0, 0.12)' : '0')};
+  border-radius: ${(props) => (props.type === 'google' ? '0' : '0 0 8px 0')};
   background-color: #f5f5f5;
 `;
 
@@ -86,7 +86,7 @@ const HomePresenter = ({ onInput, googleText, papagoText, googleTextCopy, papago
             <InputContent>
               <TextareaAutosize className="input-textarea" onInput={onInput} />
             </InputContent>
-            <ResultContent type={"google"}>
+            <ResultContent type={'google'}>
               <div className="result-text">{googleText}</div>
               <ResultFooter>
                 <Button className="copy-button" onClick={googleTextCopy}>
@@ -94,7 +94,7 @@ const HomePresenter = ({ onInput, googleText, papagoText, googleTextCopy, papago
                 </Button>
               </ResultFooter>
             </ResultContent>
-            <ResultContent type={"papago"}>
+            <ResultContent type={'papago'}>
               <div className="result-text">{papagoText}</div>
               <ResultFooter>
                 <Button className="copy-button" onClick={papagoTextCopy}>
@@ -114,7 +114,7 @@ HomePresenter.propTypes = {
   googleText: PropTypes.string,
   papagoText: PropTypes.string,
   googleTextCopy: PropTypes.func,
-  papagoTextCopy: PropTypes.func
+  papagoTextCopy: PropTypes.func,
 };
 
 export default HomePresenter;

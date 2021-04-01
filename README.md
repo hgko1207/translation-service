@@ -30,5 +30,5 @@ yarn add @k3rn31p4nic/google-translate-api
 ```js
 // 추가해야 함.
 // Importing the Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 ```

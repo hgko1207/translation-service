@@ -1,28 +1,28 @@
-import axios from "axios";
+import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "/api/"
+  baseURL: '/api/',
 });
 
 export const translationApi = {
-  google: text => {
-    return api.get("google", {
+  google: (text) => {
+    return api.get('google', {
       params: {
-        text: text
-      }
+        text: text,
+      },
     });
   },
-  googleCloud: text => {
-    return api.get("google/cloud", {
+  googleCloud: (text) => {
+    return api.get('google/cloud', {
       params: {
-        text: text
-      }
+        text: text,
+      },
     });
   },
-  papago: text =>
-    api.get("papago", {
+  papago: (text) =>
+    api.get('papago', {
       params: {
-        text: text
-      }
-    })
+        text: text,
+      },
+    }),
 };
