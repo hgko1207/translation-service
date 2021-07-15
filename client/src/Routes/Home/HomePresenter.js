@@ -6,8 +6,6 @@ import TextareaAutosize from 'react-textarea-autosize';
 import { Button } from 'react-bootstrap';
 import '../../assets/App.css';
 
-import BottomAdSense from '../../AdSense/BottomAdSense';
-
 const Container = styled.div`
   height: calc(100vh - 65px);
   position: relative;
@@ -107,10 +105,6 @@ const HomePresenter = ({ onInput, googleText, papagoText, googleTextCopy, papago
           </CardBody>
         </Card>
       </Section>
-
-      <div className="bottom-google-ad">
-        <BottomAdSense/>
-      </div>
     </Container>
   );
 };
