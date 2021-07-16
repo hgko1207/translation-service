@@ -8,8 +8,8 @@ export default () => (
     <>
       <Header />
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Redirect from="*" to="/" />
+      <Route path="/translation-service" exact component={Home} />
+        <Redirect from="*" to="/translation-service" />
       </Switch>
     </>
   </Router>

@@ -33,11 +33,33 @@ yarn add @k3rn31p4nic/google-translate-api
 import 'bootstrap/dist/css/bootstrap.min.css';
 ```
 
+## 별도의 Proxy 연결
+
+```bash
+npm i --save http-proxy-middleware
+```
+
+setupProxy.js 파일을 생성하고 아래 코드를 작성한다.
+
+```js
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+// src/setupProxy.js
+module.exports = function(app){
+    app.use(
+        createProxyMiddleware('/api', {
+            target: 'https://paper-translation-service.herokuapp.com',
+            changeOrigin: true
+        })
+    )
+  };
+```
+
 ## Deploying to Heroku
 
 - Heroku는 간단하게 무료로 호스팅 할 수 있도록 해주는 서비스이다.
 
-- package.json 안에 아래 내용을 추가한다.
+- package.json 파일의 "script" 항목 아래 내용을 추가한다.
 
 ```json
 "heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build"

@@ -31,14 +31,18 @@ const HomeContainer = () => {
       //   setGoogleText(text);
       // });
     } else if (type === apiType.papago) {
-      const {
-        data: {
-          message: {
-            result: { translatedText: resultText },
+      if (text !== '') {
+        const {
+          data: {
+            message: {
+              result: { translatedText: resultText },
+            },
           },
-        },
-      } = await translationApi.papago(text);
-      setPapagoText(resultText);
+        } = await translationApi.papago(text);
+        setPapagoText(resultText);
+      } else {
+        setPapagoText('');
+      }
     }
   };
 

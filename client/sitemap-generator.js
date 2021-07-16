@@ -8,7 +8,7 @@ const Sitemap = require("react-router-sitemap").default;
 function generateSitemap() { 
     return ( 
         new Sitemap(router) 
-            .build("https://paper-translation-service.herokuapp.com/") 
+            .build("https://hgko1207.github.io/translation-service/") 
             .save("./public/sitemap.xml") 
     ); 
 } 
