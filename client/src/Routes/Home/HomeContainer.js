@@ -21,15 +21,6 @@ const HomeContainer = () => {
       } = await translationApi.googleCloud(text);
       const { translatedText } = data[0];
       setGoogleText(translatedText);
-
-      // const data = translationApi.google(text);
-      // const promise = Promise.resolve(data);
-      // promise.then(value => {
-      //   const {
-      //     data: { text: text }
-      //   } = value;
-      //   setGoogleText(text);
-      // });
     } else if (type === apiType.papago) {
       if (text !== '') {
         const {

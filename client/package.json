@@ -45,7 +45,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://paper-translation-service.herokuapp.com",
   "homepage": "https://hgko1207.github.io/translation-service",
   "devDependencies": {
     "babel-cli": "^6.26.0",

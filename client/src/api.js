@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api/',
+  baseURL: 'https://paper-translation-service.herokuapp.com/api/',
 });
 
 export const translationApi = {

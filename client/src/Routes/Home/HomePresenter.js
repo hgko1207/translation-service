@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import '../../assets/App.css';
 
 const Container = styled.div`
-  height: calc(100vh - 65px);
+  min-height: 480px;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
