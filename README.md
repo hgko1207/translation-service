@@ -2,9 +2,9 @@
 
 ## 기능들
 
+- [ ] 엔터 및 주석 제거
 - [ ] 구글 번역
 - [ ] 파파고 번역
-- [ ] 엔터 및 주석 제거
 
 ## Packages
 
@@ -68,3 +68,15 @@ module.exports = function(app){
 - [Heroku 사이트](https://dashboard.heroku.com/)를 접속하여 계정을 생성하고 로그인한다.
 - **create a new app** 한 후 Deploy 탭을 선택한다.
 - GitHub 계정을 연결 한 후 Manual deploy 한다.
+
+## Deploying to Github Pages
+
+```bash
+npm i gh-pages
+or
+yarn add gh-pages
+```
+
+1. package.json -> "homepage": "https://hgko1207.github.io/paper-translation/" 변경
+2. package.json -> "scripts" -> "deploy": "gh-pages -d build", "predeploy": "npm run build" 추가
+3. npm run deploy 실행
