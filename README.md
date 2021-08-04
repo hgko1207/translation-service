@@ -1,5 +1,8 @@
 # 번역 서비스
 
+- https://paper-translation-service.herokuapp.com/
+- https://hgko1207.github.io/translation-service/
+
 ## 기능들
 
 - [ ] 엔터 및 주석 제거
